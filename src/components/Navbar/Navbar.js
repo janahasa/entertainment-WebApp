@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav>
       <div className="navbar">
         <div className="nav-links">
-          <a href="./Entertainment-web-app" className="nav-logo">
+          <a  className="nav-logo">
           <Image src={logo}/>
           </a>
           <ul className="nav-items">
