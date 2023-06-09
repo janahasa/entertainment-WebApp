@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../components/config/firebase-config';
@@ -11,7 +11,7 @@ function Login() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
- 
+
 
   const login = async (e) => {
     e.preventDefault();
@@ -24,8 +24,7 @@ function Login() {
         navigate('/');
       } else {
         await sendEmailVerification(auth.currentUser);
-        setError(error.message);
-       
+        setError("not vefied user");
       }
     } catch (error) {
       setError(error.message);
