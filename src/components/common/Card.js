@@ -20,14 +20,12 @@ const Card = ({
   isBookedMarked,
   indicateBookedMarkedBtn,
   to,
-  type,
   id,
   
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [count, setCount] = useState(10);
   const [isMouseStillHovered, setIsMouseStillHovered] = useState(false);
-
   const debouncedAlert = useDebounce(() => {
     if (isMouseStillHovered) {
       setIsHovered(true);

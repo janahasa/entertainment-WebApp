@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import SectionTitle from "../components/common/SectionTitle";
 import SearchBar from "../components/Search/SearchBar";
 import { useFetch } from "../hooks/useFetch";
@@ -25,9 +25,6 @@ const Home = () => {
     useFetch(API_TRENDING_URL);
   const { bookMarkedMovies, bookMarkedTVs, indicateBookedMarkedBtn } =
     useContext(BookMarkedContext);
-
- 
-
   const [searchInput, setSearchInput] = useState("");
   const {
     data: search,
@@ -79,20 +76,20 @@ const Home = () => {
           handleSearchInput={handleSearchInput}
         ></SearchBar>
         {!displayedSearch && !searchInput ? (
-          <>
+          <Fragment>
            <Trending/>
             <TopRatedTV/>
             <TvSeries/>
             <TopRatedMovie/>
             <NowPlaying/>
-          </>
+          </Fragment>
         ) : searchLoading ? (
           <div className="loader-wrapper">
             <Loader></Loader>
           </div>
         ) : (
           displayedSearch && (
-            <>
+            <Fragment>
               <SectionTitle
                 className="section-title"
                 content={`Found ${search.total_results} results for '${searchInput}'`}
@@ -103,7 +100,7 @@ const Home = () => {
                 bookMarkedTVs={bookMarkedTVs}
                 indicateBookedMarkedBtn={indicateBookedMarkedBtn}
               ></HomeSearchResult>
-            </>
+            </Fragment>
           )
         )}
         {

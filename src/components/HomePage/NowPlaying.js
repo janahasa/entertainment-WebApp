@@ -11,6 +11,7 @@ import CardSlider from "../common/CardSlider";
 const NowPlaying = () => {
   const { bookMarkedMovies,  indicateBookedMarkedBtn } =
     useContext(BookMarkedContext);
+    console.log({ indicateBookedMarkedBtn})
   const { data: moviesLatest, loading: moviesLatestLoading } =
     useFetch(MOVIES_LATEST_API);
 

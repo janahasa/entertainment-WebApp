@@ -1,6 +1,5 @@
 export const API_TRENDING_URL =
   "https://api.themoviedb.org/3/trending/all/day?api_key=8adc497971eabd24fbe9cb376e4a7cde";
-export const API_POPULAR_URL = "";
 export const API_IMG = "https://image.tmdb.org/t/p/w500";
 export const API_POPULAR_MOVIES =
   "https://api.themoviedb.org/3/movie/popular?api_key=8adc497971eabd24fbe9cb376e4a7cde&language=en&page=";
@@ -25,6 +24,7 @@ export const MOVIES_LATEST_API =
  
 export const MULTI_SEARCH_API =
   "https://api.themoviedb.org/3/search/multi?api_key=8adc497971eabd24fbe9cb376e4a7cde&language=en-US&include_adult=false&query=";
+
   export function isBookMarked(id, bookMarked) {
     return bookMarked.some((item) => item.id === id);
 }
@@ -38,6 +38,7 @@ export const deboune = (func, delay) => {
     }, delay);
   };
 };
+
 export function toHoursAndMinutes(totalMinutes) {
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;

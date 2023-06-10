@@ -18,7 +18,7 @@ export function useFetch(url) {
           throw Error(" Something went wrong");
         }
         const data = await response.json();
-        data && setData(data);
+         setData(data)
         setLoading(false);
       } catch (err) {
         if (err.name === "AbortError") {

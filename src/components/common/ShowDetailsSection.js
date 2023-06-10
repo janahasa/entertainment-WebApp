@@ -10,7 +10,7 @@ const ShowDetailsSection = (props) => {
   return (
     <div className="details-wrapper">
       <div className="show-img-wrapper">
-        <Image src={API_IMG + props.poster_path}></Image>
+        <Image src={API_IMG + props.poster_path}/>
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -41,8 +41,10 @@ const ShowDetailsSection = (props) => {
           </div>
           <div className="genres">
             {props.genres.map((genre) => {
+             console.log({genre})
               return <span>{genre.name}</span>;
             })}
+      
           </div>
           <p className="show-overview">{props.overview}</p>
         </div>

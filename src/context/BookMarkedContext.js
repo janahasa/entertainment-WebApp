@@ -50,18 +50,12 @@ const BookMarkedContextProvider = (props) => {
     }
   };
  
-
-  useEffect(() => {
-    
-  });
   return (
     <BookMarkedContext.Provider
       value={{
         bookMarkedMovies,
         bookMarkedTVs,
-        indicateBookedMarkedBtn,
-      
-
+        indicateBookedMarkedBtn,   
       }}
     >
       {props.children}

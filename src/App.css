@@ -23,7 +23,7 @@ body.dark {
   --white: #ffffff;
   --font-color: hsla(0, 0%, 100%, 0.75);
   --placeholder: rgba(255, 255, 255, 0.5);
-  transition: all 0.3s ease-in;
+   transition: all 0.3s ease-in;
   --box-shadow: 1px 1px 5px 1px rgba(17, 21, 23, 0.7);
    --nav-bg:#10141e;
 }

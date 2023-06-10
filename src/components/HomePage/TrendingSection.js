@@ -1,9 +1,6 @@
 import React from 'react'
-import { isBookMarked} from '../../utils/utils';
 import Card from '../common/Card';
-import { useParams } from "react-router-dom";
-import { useFetch } from "../../hooks/useFetch";
-import { API_KEY, DETAILS_API } from "../../utils/utils";
+import { isBookMarked} from '../../utils/utils';
 
 
 function TrendingSection({
@@ -11,13 +8,8 @@ function TrendingSection({
   bookMarkedMovies,
   bookMarkedTVs,
   indicateBookedMarkedBtn, 
-})  
-
- { 
- const { id } = useParams();
- const { data: videos } = useFetch(
-   `${DETAILS_API}/movie/${id}/videos${API_KEY}`
- );
+})   {
+ 
   return (
     
     <ul className="trending-section">
@@ -29,7 +21,7 @@ function TrendingSection({
           release_date,
           original_title,
           original_name,
-           media_type,
+          media_type,
           first_air_date,
         } = element;
         const isBookedMarked =
@@ -40,7 +32,7 @@ function TrendingSection({
     
         const detailsPageType = media_type === "movie" ? "movies" : "series";
         return (
-          <li key={id}>
+          <li >
             <Card
               element={element}
               className="trending-card"
@@ -53,8 +45,7 @@ function TrendingSection({
               isBookedMarked={isBookedMarked}
               indicateBookedMarkedBtn={indicateBookedMarkedBtn}
               to={`/${detailsPageType}/${id}`}
-              embedId={videos && videos.results[0].key}
-            ></Card>
+            />
           </li>
         );
       })}
