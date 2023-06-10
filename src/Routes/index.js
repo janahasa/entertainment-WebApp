@@ -9,14 +9,12 @@ import ShowTVDetails from "../pages/ShowTVDetails";
 import NotFoundPage from "../pages/NotFoundPage";
 import Signup from "../pages/signup";
 import Login from "../pages/login";
-import { AuthProvider } from "../context/AuthContext"
 import Footer from "../components/common/Footer";
 
 
 
 function Rotue() {
   return (
-    <AuthProvider>
     <Router basename="/Entertainment-web-app">
       <Navbar />    
       <Routes>
@@ -32,7 +30,6 @@ function Rotue() {
       </Routes>
       <Footer/>
     </Router>
-</AuthProvider>
   );
 }
 
