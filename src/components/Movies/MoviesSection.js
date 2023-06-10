@@ -6,8 +6,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { API_KEY, DETAILS_API } from '../../utils/utils';
 
 const MoviesSection = ({ movies, indicateBookedMarkedBtn, bookMarked, className }) => {
-  const { id } = useParams();
-  const { data: videos } = useFetch(`${DETAILS_API}/movie/${id}/videos${API_KEY}`);
+
 
   return (
     <div className={className}>
@@ -23,8 +22,9 @@ const MoviesSection = ({ movies, indicateBookedMarkedBtn, bookMarked, className 
             className="card"
             to={`/movies/${id}`}
             {...rest}
-            embedId={videos && videos.results[0].key}
             key={id}
+            id={id}
+           
           />
         );
       })}

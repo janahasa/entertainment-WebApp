@@ -38,7 +38,6 @@ const HomeSearchResult = ({
           className="card"
           to={`/${detailsPageType}/${id}`}
           {...rest}
-          embedId={videos && videos.results[0].key}
         ></Card>
       );
     }

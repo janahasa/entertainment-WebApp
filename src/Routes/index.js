@@ -30,6 +30,7 @@ function Rotue() {
       </Routes>
       <Footer/>
     </Router>
+
   );
 }
 

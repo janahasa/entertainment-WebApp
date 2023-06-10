@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+// It attempts to retrieve the stored value associated with the given key from localStorage. If a value is found, it is parsed from JSON format and returned. If no value is found or if the stored value is null,
 function getSavedValue(key, initValue) {
   try {
     const value = JSON.parse(localStorage.getItem(key));
